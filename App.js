@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 
 import React from 'react';
 import {
@@ -24,31 +17,16 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { NavigationContainer } from '@react-navigation/native';
 
 import {
-  Bell,
-  Logo,
-  RedBell,
-  Plus,
-  Active,
-  Waiting,
-  Failed,
-  Prio,
-  WaitingActive,
-  Prio1,
-  FailedActive,
+  AppIcon,
   Logout,
 } from './assets';
+
+import Kelompok from './src/component/kelompok';
 
 const { width, height} =  Dimensions.get('window');
 
 const Tab = createMaterialTopTabNavigator();
 
-const Profile = () => {
-  return (
-    <View>
-      <Text>Profile</Text>
-    </View>
-  );
-}
 
 
 const Jobs = () => {
@@ -59,21 +37,6 @@ const Jobs = () => {
   );
 }
 
-const Events = () => {
-  return (
-    <View>
-      <Text>Events</Text>
-    </View>
-  );
-}
-
-const Hrd = () => {
-  return (
-    <View>
-      <Text>HRD</Text>
-    </View>
-  );
-}
 
 
 const App = () => {
@@ -82,60 +45,67 @@ const App = () => {
       <View style={styles.container}>
         <SafeAreaView>
           <View style={styles.header}>
-            <Image source={Logo} style={styles.logo} />
+            <TouchableOpacity>
+            <Image source={AppIcon} style={styles.logo} />
+            </TouchableOpacity>
             <View style={{flexDirection: 'row'}}>
-              <Text>
+              {/*<Text>
                 Hello
                 <Text style={{fontWeight: 'bold'}}>
                 {' '}Admin
                 </Text>
-              </Text>
+              </Text>*/}
               <TouchableOpacity
-                style={{marginLeft: 20}}
+                // style={{marginLeft: 20}}
                 onPress={() => alert()}>
-                 <Image style={styles.bell} source={Logout} />
+                 <Image style={{...styles.logo, borderRadius: 30}} source={require('./assets/images/boy.png')} />
               </TouchableOpacity>
             </View>
           </View>
         </SafeAreaView>
 
+        <View style={{ marginHorizontal: 16, marginTop: 24 }} >
+          <Text>
+            <Text style={{ fontSize: 18 }} >Hello,</Text>
+            <Text style={{ fontSize: 18, fontWeight: 'bold'}} >
+            {' '}Barnabas !
+            </Text>
+          </Text>
+        </View>
+
         <NavigationContainer>
           <Tab.Navigator
-            // tabBar={props => <MyTabBar {...props} />}
-             initialRouteName='Jobs'
+             initialRouteName='Profil'
              tabBarPosition='top'
               
              tabBarOptions={{
                 upperCaseLabel:false,
                 showIcon: true,
-                // activeTintColor:'black',
-                // inactiveTintColor:'#D9D8DD',
-                labelStyle: { fontSize: 14,  textTransform: 'none'},
+                activeTintColor:'white',
+                inactiveTintColor:'black',
+                labelStyle: { fontSize: 14,  textTransform: 'none', fontWeight: '700'},
                 tabStyle: {
                   paddingTop: 0,
-                  paddingBottom: 20,
+                  // paddingBottom: 20,
                   borderRadius: 20
                   // backgroundColor: 'powderblue'
                 },
                  indicatorStyle: {
-                  // opacity: 0
-                  height: 30,
-                  backgroundColor: 'white',
-                  borderRadius: 20,
-                  // marginLeft: 18,
-                  // width: 80
+                  height: 40,
+                  backgroundColor: '#FF2C14',
+                  borderRadius: 12,
                 },
-                style: { 
-                  backgroundColor: '#D9D8DD', 
-                  marginTop: 15,
-                  borderRadius: 20,
-                  height: 30,
-                  marginLeft: 10,
-                  marginRight: 10,
+                style: {  
+                  backgroundColor: '#FFFFFF', 
+                  marginTop: 20,
+                  borderRadius: 12,
+                  height: 40,
+                  marginLeft: 80,
+                  marginRight: 80,
                 },
               }}
           >
-            <Tab.Screen name="Profile" component={Profile} 
+            <Tab.Screen name="Profile" component={Kelompok} 
               options={{ 
                 tabBarLabel: 'Profile',
 
@@ -143,12 +113,6 @@ const App = () => {
             />
             <Tab.Screen name="Jobs" component={Jobs} 
               options={{ tabBarLabel: 'Jobs' }}
-            />
-            <Tab.Screen name="Events" component={Events} 
-              options={{ tabBarLabel: 'Events' }}
-            />
-            <Tab.Screen name="Hrd" component={Hrd} 
-              options={{ tabBarLabel: 'HRD' }}
             />
           </Tab.Navigator>
         </NavigationContainer>
@@ -160,25 +124,25 @@ const App = () => {
 
 const styles = StyleSheet.create({
   header: {
-    height: 45,
+    // height: 45,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
+    paddingTop: 16,
   },
   logo: {
-    height: 40,
-    width: 40,
+    height: 30,
+    width: 30,
   },
   bell: {
     height: 20,
     width: 20,
   },
   container: {
-    backgroundColor: '#efeff4',
+    backgroundColor: '#EFEFF4',
     flex: 1,
-    paddingTop: 10,
     position: 'relative',
   },
 });

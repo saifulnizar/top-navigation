@@ -75,7 +75,7 @@ import DeadlineEnd from './icons/deadlineend.png';
 import DeadlineStart from './icons/deadlinestart.png';
 import LeaderView from './icons/leaderview.png';
 import Logout from './icons/logout.png';
-
+import AppIcon from './icons/app.png';
 import Image1 from './images/img.jpg';
 
 export {
@@ -157,4 +157,5 @@ export {
   DeadlineStart,
   LeaderView,
   Logout,
+  AppIcon,
 };
