@@ -43,6 +43,7 @@ const App = () => {
   return (
     <>
       <View style={styles.container}>
+       <StatusBar barStyle='dark-content' backgroundColor='#F2F2F7' />
         <SafeAreaView>
           <View style={styles.header}>
             <TouchableOpacity>
@@ -73,7 +74,9 @@ const App = () => {
           </Text>
         </View>
 
-        <NavigationContainer>
+        <Kelompok />
+
+        {/*<NavigationContainer>
           <Tab.Navigator
              initialRouteName='Profil'
              tabBarPosition='top'
@@ -86,20 +89,19 @@ const App = () => {
                 labelStyle: { fontSize: 14,  textTransform: 'none', fontWeight: '700'},
                 tabStyle: {
                   paddingTop: 0,
-                  // paddingBottom: 20,
-                  borderRadius: 20
-                  // backgroundColor: 'powderblue'
+                  paddingBottom: 90,
+                  borderRadius: 12,
                 },
                  indicatorStyle: {
-                  height: 40,
+                  height: 30,
                   backgroundColor: '#FF2C14',
                   borderRadius: 12,
                 },
                 style: {  
-                  backgroundColor: '#FFFFFF', 
+                  backgroundColor: '#EEEEEE', 
                   marginTop: 20,
                   borderRadius: 12,
-                  height: 40,
+                  height: 30,
                   marginLeft: 80,
                   marginRight: 80,
                 },
@@ -115,7 +117,7 @@ const App = () => {
               options={{ tabBarLabel: 'Jobs' }}
             />
           </Tab.Navigator>
-        </NavigationContainer>
+        </NavigationContainer>*/}
 
       </View>
     </>
@@ -141,7 +143,7 @@ const styles = StyleSheet.create({
     width: 20,
   },
   container: {
-    backgroundColor: '#EFEFF4',
+    backgroundColor: '#F5F5F5',
     flex: 1,
     position: 'relative',
   },
