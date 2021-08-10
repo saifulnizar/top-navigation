@@ -32,7 +32,7 @@ const Tab = createMaterialTopTabNavigator();
 const Jobs = () => {
   return (
     <View>
-      <Text>Jobs</Text>
+      <Text>Job</Text>
     </View>
   );
 }
